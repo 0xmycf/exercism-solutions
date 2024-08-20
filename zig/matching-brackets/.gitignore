@@ -1,0 +1,17 @@
+curl 8.4.0 (x86_64-apple-darwin23.0) libcurl/8.4.0 (SecureTransport) LibreSSL/3.3.6 zlib/1.2.12 nghttp2/1.58.0
+Release-Date: 2023-10-11
+Protocols: dict file ftp ftps gopher gophers http https imap imaps ldap ldaps mqtt pop3 pop3s rtsp smb smbs smtp smtps telnet tftp
+Features: alt-svc AsynchDNS GSS-API HSTS HTTP2 HTTPS-proxy IPv6 Kerberos Largefile libz MultiSSL NTLM NTLM_WB SPNEGO SSL threadsafe UnixSockets
+# Created by https://www.toptal.com/developers/gitignore/api/zig
+# Edit at https://www.toptal.com/developers/gitignore?templates=zig
+
+### zig ###
+# Zig programming language
+
+zig-cache/
+zig-out/
+build/
+build-*/
+docgen_tmp/
+
+# End of https://www.toptal.com/developers/gitignore/api/zig
