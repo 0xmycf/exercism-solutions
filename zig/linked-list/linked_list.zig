@@ -73,20 +73,14 @@ pub fn LinkedList(comptime T: type) type {
             // Please implement this method.
             // It must modify the list only when it contains the given node.
             var curr = self.first;
-            while (curr) |node| {
-                if (node.data != elem.data) {
-                    curr = node.next;
-                    continue;
-                }
-                if (self.len == 1) {
-                    self.last = null;
-                    self.first = null;
-                } else {
-                    if (node.next) |nxt| nxt.prev = node.prev;
-                    if (node.prev) |prv| prv.next = node.next;
-                    if (self.last == node) self.last = node.prev;
-                    if (self.first == node) self.first = node.next;
-                }
+            while (curr) |node| : (curr = node.next) {
+                if (node.data != elem.data) continue;
+
+                if (node.next) |nxt| nxt.prev = node.prev;
+                if (node.prev) |prv| prv.next = node.next;
+                if (self.last == node) self.last = node.prev;
+                if (self.first == node) self.first = node.next;
+
                 self.len -= 1;
                 return;
             }
